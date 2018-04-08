@@ -27,15 +27,3 @@ function geocodeAddress(geocoder) {
     });
 };
 
-
-/*
-$('input[name="location"]').click(function () {
-    alert('hii');
-});
-
-$("#search").keyup(function (e) {
-    if (e.which == 13) {
-        $('input[name="location"]').trigger('click');
-    }
-})
-*/
