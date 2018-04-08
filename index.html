@@ -33,14 +33,14 @@
             <form>
                   <div class="input-field">
                     <i class="material-icons prefix">add_location</i>
-                    <input id="new_location" type="tel" class="validate">
+                    <input id="new_location" type="tel" class="validate" name="location">
                     <label for="new_location">Change Location</label>
                   </div>
               </form>
         </li>
       </ul>
 
-      <form class="right hide-on-med-and-down">
+      <form id="location-form" class="right hide-on-med-and-down">
         <div class="input-field">
           <input id="search" type="search" placeholder="Change Location" required>
           <label class="label-icon" for="search">
@@ -114,9 +114,9 @@
 
 
   <!--  Scripts -->
-
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+  <script src="js/sun.js"></script>
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcmLyJkZ4WPSddZS6SkgMc6Fo5DFEQi8E&callback=initMap">
   </script>
@@ -127,7 +127,7 @@
 
   <script src="https://momentjs.com/downloads/moment.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/sun.js"></script>
+  
   <script src="js/init.js"></script>
   
 </body>
