@@ -10,6 +10,7 @@ function initMap() {
         event.preventDefault();
     })
 };
+
 // retreiving user input and set up of Geocoder
 function geocodeAddress(geocoder) {
     //adress can be zip code or any for of place name
@@ -26,4 +27,27 @@ function geocodeAddress(geocoder) {
         }
     });
 };
+
+/*
+function getUVIndex() {
+    var lat = coords.lat;
+    var lng = coords.lng;
+
+    var queryURL = "https://api.darksky.net/forecast/2d26fe15c66c821f0486e0a2e0269d50/37.8267,-122.4233";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        var results = response.data;
+        console.log(results);
+    })
+}
+*/
+
+$.getJSON('https://api.darksky.net/forecast/2d26fe15c66c821f0486e0a2e0269d50/37.8267,-122.4233', function(forecast) {
+    console.log(forecast);
+});
+
+
 
