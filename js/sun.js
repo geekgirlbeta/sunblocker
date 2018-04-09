@@ -22,32 +22,32 @@ function geocodeAddress(geocoder) {
             // get lat and Lng and assign them to coords object
             coords.lat = results[0].geometry.location.lat();
             coords.lng = results[0].geometry.location.lng();
+            getUVIndex();
         } else {
             console.log('Geocode was not successful for the following reason: ' + status);
         }
     });
 };
 
-/*
+
 function getUVIndex() {
     var lat = coords.lat;
     var lng = coords.lng;
 
-    var queryURL = "https://api.darksky.net/forecast/2d26fe15c66c821f0486e0a2e0269d50/37.8267,-122.4233";
+    var queryURL = "https://api.darksky.net/forecast/2d26fe15c66c821f0486e0a2e0269d50/" + lat + "," + lng;
 
     $.ajax({
         url: queryURL,
-        method: "GET"
+        method: "GET",
+        dataType: "jsonp",
+        xhrFields: {
+            withCredentials: false
+        }
     }).then(function (response) {
-        var results = response.data;
-        console.log(results);
+        var results = response;
+        var uv = response.currently.uvIndex;
+        
+        $("#uv").text(uv);
+
     })
 }
-*/
-
-$.getJSON('https://api.darksky.net/forecast/2d26fe15c66c821f0486e0a2e0269d50/37.8267,-122.4233', function(forecast) {
-    console.log(forecast);
-});
-
-
-
